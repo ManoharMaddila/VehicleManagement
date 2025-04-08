@@ -1,0 +1,177 @@
+Here’s a **detailed help document** for your **Vehicle Management System** Android Studio project. This documentation includes the overview, features, installation steps, app structure, database configuration, and usage guidelines.
+
+---
+
+# 📘 Vehicle Management System – Help Document (Android Studio)
+
+## 🧾 Project Overview
+
+The **Vehicle Management System** is an Android application developed using Java/Kotlin with a backend powered by Spring Boot and MySQL. It allows **managers** to manage vehicles (add, assign, and monitor usage) and **users** to request, use, and track vehicles.
+
+---
+
+## 🎯 Core Features
+
+### 👤 User Roles
+- **Manager**
+  - Add, update, delete vehicles
+  - Assign vehicles to users
+  - Approve/reject user vehicle requests
+  - View fuel and usage history
+
+- **User**
+  - View assigned vehicles
+  - Request for vehicles
+  - Enter fuel details
+  - Mark in-time / out-time
+
+### 🛠 Modules
+1. **Authentication**
+   - Registration and login for Manager/User
+2. **Vehicle Management**
+   - CRUD operations on vehicles
+   - Assigning vehicles
+3. **Vehicle Usage**
+   - Fuel tracking
+   - Time logs
+4. **Permissions and Requests**
+   - Users send vehicle usage requests
+   - Managers approve or reject
+
+---
+
+## 🧰 Tech Stack
+
+- **Frontend**: Android Studio (Java/Kotlin, XML, Retrofit)
+- **Backend**: Spring Boot
+- **Database**: MySQL
+- **Communication**: RESTful APIs
+
+---
+
+## 🏗 Folder Structure (Android App)
+
+```
+📁 VehicleManagementSystem/
+│
+├── 📁 app/
+│   ├── 📁 java/com/yourpackage/vms/
+│   │   ├── activities/
+│   │   ├── adapters/
+│   │   ├── api/
+│   │   ├── models/
+│   │   ├── utils/
+│   │   └── viewmodels/
+│   │
+│   ├── 📁 res/
+│   │   ├── layout/
+│   │   ├── drawable/
+│   │   └── values/
+│
+└── 📄 build.gradle
+```
+
+---
+
+## 🖥 Backend Setup (Spring Boot)
+
+1. **Database (MySQL)**
+   - Database name: `cloud`
+   - Tables:
+     - `users` (id, name, email, password, role)
+     - `vehicles` (id, name, number, status, assigned_to)
+     - `vehicle_requests` (id, user_id, vehicle_id, status)
+     - `fuel_logs` (id, vehicle_id, date, liters, cost)
+     - `usage_logs` (id, user_id, vehicle_id, in_time, out_time)
+
+2. **Spring Boot APIs**
+   - `/api/auth/register`
+   - `/api/auth/login`
+   - `/api/vehicles/`
+   - `/api/vehicles/assign`
+   - `/api/requests/`
+   - `/api/fuel/`
+   - `/api/usage/`
+
+---
+
+## 📦 Android App Setup
+
+### 1. Requirements
+- Android Studio Flamingo or newer
+- Gradle 8.x
+- Emulator or Android device (API 24+)
+
+### 2. Clone the Project
+```bash
+git clone https://github.com/your-repo/vehicle-management-system.git
+```
+
+### 3. Add Dependencies
+```gradle
+implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.6.1'
+implementation 'androidx.recyclerview:recyclerview:1.3.1'
+```
+
+### 4. Configure Retrofit
+```java
+Retrofit retrofit = new Retrofit.Builder()
+        .baseUrl("http://<your-localhost-or-server-ip>:8080/api/")
+        .addConverterFactory(GsonConverterFactory.create())
+        .build();
+```
+
+---
+
+## 🚀 App Usage Guide
+
+### 🔐 Authentication
+- **Register as User/Manager**
+- **Login** with credentials
+- Role is determined from server response
+
+### 🚗 Vehicle Management (Manager)
+- Add new vehicles
+- Update vehicle info
+- Assign vehicles to users
+- View all vehicle usage history
+
+### 📩 Request & Approvals (User/Manager)
+- **User**: Request a vehicle
+- **Manager**: View and approve/reject requests
+
+### ⛽ Fuel & Usage Logs (User)
+- Log fuel data (date, liters, cost)
+- Mark **in-time** when vehicle is taken
+- Mark **out-time** when returned
+
+---
+
+## 🐞 Troubleshooting
+
+| Issue                          | Solution |
+|-------------------------------|----------|
+| API call failure              | Check IP address and server is running |
+| Retrofit null pointer         | Ensure correct base URL and response handling |
+| Login fails with 401          | Check credentials or server token handling |
+| Layout issues on small devices| Use `ConstraintLayout` and scroll views |
+
+---
+
+## 📌 Tips
+
+- Use **ViewModel** and **LiveData** to manage UI state
+- Use **SharedPreferences** to store login/session tokens
+- Validate user input before sending API requests
+- Always handle Retrofit responses with `try-catch`
+
+---
+
+## 📄 Future Enhancements
+
+- Push notifications for approvals
+- PDF export of fuel/usage logs
+- Vehicle maintenance scheduling
+- Analytics dashboard for managers
