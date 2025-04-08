@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:gravity="center">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Vehicle"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="20dp"
+        android:gravity="center" />
+
+    <EditText
+        android:id="@+id/editTextVehicleName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Vehicle Name"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/editTextVehicleModel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Vehicle Model"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/editTextVehicleNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Vehicle Number"
+        android:inputType="text" />
+
+    <Button
+        android:id="@+id/btnSubmitVehicle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Vehicle"
+        android:layout_marginTop="20dp" />
+</LinearLayout>

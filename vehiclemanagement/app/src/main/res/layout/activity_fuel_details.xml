@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:gravity="center">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Fuel Details"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginBottom="20dp" />
+
+    <!-- Vehicle ID -->
+    <EditText
+        android:id="@+id/editTextVehicleId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Vehicle ID"
+        android:inputType="text" />
+
+    <!-- Vehicle Type -->
+    <EditText
+        android:id="@+id/editTextVehicleType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Vehicle Type"
+        android:inputType="text" />
+
+    <!-- Fuel Amount -->
+    <EditText
+        android:id="@+id/editTextFuelAmount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Fuel Amount (Liters)"
+        android:inputType="numberDecimal" />
+
+    <!-- Amount Spent -->
+    <EditText
+        android:id="@+id/editTextAmountSpent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Amount Spent (in currency)"
+        android:inputType="numberDecimal" />
+
+    <!-- Fuel Date -->
+    <EditText
+        android:id="@+id/editTextFuelDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Select Fuel Date"
+        android:focusable="false"
+        android:clickable="true"
+        android:inputType="none" />
+
+    <!-- ✅ User ID -->
+    <EditText
+        android:id="@+id/editTextUserId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter User ID"
+        android:inputType="text" />
+
+    <!-- ✅ Fuel Type -->
+    <EditText
+        android:id="@+id/editTextFuelType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Fuel Type (e.g., Petrol, Diesel)"
+        android:inputType="text" />
+
+    <!-- Submit Button -->
+    <Button
+        android:id="@+id/btnSubmit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        android:backgroundTint="@android:color/holo_blue_dark"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="20dp" />
+
+</LinearLayout>

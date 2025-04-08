@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.vehiclemanagement">
+
+    <!-- Internet Permission for API Calls -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:label="Vehicle Management"
+        android:theme="@style/Theme.VehicleManagement"
+        android:usesCleartextTraffic="true"
+        android:networkSecurityConfig="@xml/network_security_config">
+
+        <!-- Main Activity (Launcher) -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:theme="@style/Theme.VehicleManagement">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Login Activity -->
+        <activity android:name=".LoginActivity" android:exported="true" />
+        <!-- Register User Activity -->
+        <activity android:name=".RegisterUserActivity" android:exported="true" />
+        <!-- User Dashboard Activity -->
+        <activity android:name=".UserDashboardActivity" android:exported="true" />
+        <!-- Manager Dashboard Activity -->
+        <activity android:name=".ManagerDashboardActivity" android:exported="true" />
+        <!-- In/Out Time Activity (User) -->
+        <activity android:name=".InOutTimeActivity" android:exported="true" />
+        <!-- In/Out Time Activity (Manager) ✅ Add this -->
+        <activity android:name=".InOutTimeManagerActivity" android:exported="true" />
+        <!-- Fuel Details Activity -->
+        <activity android:name=".FuelDetailsActivity" android:exported="true" />
+        <!-- Fuel Details Manager Activity -->
+        <activity android:name=".FuelDetailsManagerActivity" android:exported="true" />
+        <!-- Request Vehicle Activity -->
+        <activity android:name=".VehicleRequestActivity" android:exported="true" />
+        <!-- Add Vehicle Activity -->
+        <activity android:name=".AddVehicleActivity" android:exported="true" />
+        <!-- Add Driver Activity -->
+        <activity android:name=".AddDriverActivity" android:exported="true" />
+        <!-- Request Vehicle Manager Activity (if needed in future) -->
+        <!-- <activity android:name=".RequestVehicleManagerActivity" android:exported="true" /> -->
+
+    </application>
+</manifest>

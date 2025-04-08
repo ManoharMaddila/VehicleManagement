@@ -1,0 +1,6 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Application theme that removes the ActionBar -->
+    <style name="Theme.VehicleManagement" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here -->
+    </style>
+</resources>

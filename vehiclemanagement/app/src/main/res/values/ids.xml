@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="btnAddVehicle" type="id"/>
+    <item name="btnAddDriver" type="id"/>
+    <item name="btnViewFuelDetails" type="id"/>
+    <item name="btnViewInOutTimes" type="id"/>
+    <item name="btnViewVehicleRequests" type="id"/>
+    <item name="editTextRequestDate" type="id"/>
+    <item name="editTextFuelType" type="id"/>
+</resources>
